@@ -2,7 +2,6 @@
 let result = "";
 let playerScore = 0;
 let computerScore = 0;
-let roundNum = 0;
 
 
 function getComputerChoice() {
@@ -24,45 +23,49 @@ let computerSelection = getComputerChoice();
 function playGame(playerSelection, computerSelection) {
     if (playerSelection === computerSelection) {
         result = "Tie";
-        ++roundNum;
     } else if (playerSelection === "rock" && computerSelection === "paper"){
-        result = "Point goes to the Computer";
+        result = "Paper beats rock. Point goes to the Computer";
         ++computerScore;
-        ++roundNum;
     } else if (playerSelection === "paper" && computerSelection === "scissors"){
-        result = "Point goes to the Computer";
+        result = "Scissors beat Paper. Point goes to the Computer";
         ++computerScore;
-        ++roundNum;
     } else if (playerSelection === "scissors" && computerSelection === "rock"){
-        result = "Point goes to the Computer";
+        result = "Rock beats Scissors. Point goes to the Computer";
         ++computerScore;
-        ++roundNum;
-    } else {
-        result = "Point goes to the You!";
+    } else if (playerSelection === "rock" && computerSelection === "scissors"){
+        result = "Rock beats Scissors! Point goes to You!";
         ++playerScore;
-        ++roundNum;
+    } else if (playerSelection === "paper" && computerSelection === "rock"){
+        result = "Paper beats rock! Point goes to You!";
+        ++playerScore;
+    } else if (playerSelection === "scissors" && computerSelection === "paper"){
+        result = "Scissors beats Paper! Point goes to You!";
+        ++playerScore;
     }
      console.log(result);
 }
 
 function scoreBoard () {
-    if (roundNum === 5 && playerScore > computerScore) {
-        alert("Congratulations. You Win! Click OK or press Enter to Play again");
-    } else if (roundNum === 5 && computerScore > playerScore) {
-        alert("The Game is over. You lose. Click OK or press Enter to Play again");
-    } else if ( roundNum === 5 && playerScore === computerScore) {
-        alert("Tie Game. Click OK or press Enter to Play again.")
-    }
+    if (playerScore === 5 && playerScore > computerScore) {
+        alert("Congratulations. You Win! Click Reset Game to Play again");
+    } else if (computerScore === 5 && computerScore > playerScore) {
+        alert("The Game is over. You lose. Click Reset Game to Play again");
+    } 
 }
 
 function game() {
-    for (let i = 0; i < 5; i++) {
+    for (let i = 0; playerScore<5 && computerScore<5; i++) {
         playGame(prompt("Rock, Paper, or scissors?", "").toLowerCase(), getComputerChoice());
         getComputerChoice(i);
         scoreBoard(i);
-    }
+    } 
 }
 
-game();
+setTimeout(function() {
+    game();
+}, 500);
 
-location.reload()
+let reloadButton = document.querySelector("#myButton");
+reloadButton.addEventListener('click', function() {
+    window.location.reload(true);
+});
