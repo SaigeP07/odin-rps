@@ -47,11 +47,11 @@ function playGame(playerSelection, computerSelection) {
 
 function scoreBoard () {
     if (roundNum === 5 && playerScore > computerScore) {
-        alert("Congratulations. You Win!");
+        alert("Congratulations. You Win! Click OK or press Enter to Play again");
     } else if (roundNum === 5 && computerScore > playerScore) {
-        alert("The Game is over. You lose.");
+        alert("The Game is over. You lose. Click OK or press Enter to Play again");
     } else if ( roundNum === 5 && playerScore === computerScore) {
-        alert("Tie Game. Try again.")
+        alert("Tie Game. Click OK or press Enter to Play again.")
     }
 }
 
@@ -64,3 +64,5 @@ function game() {
 }
 
 game();
+
+location.reload()
