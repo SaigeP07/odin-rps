@@ -8,6 +8,9 @@ let btnRock = document.querySelector('.rock');
 let btnPaper = document.querySelector('.paper');
 let btnScissors = document.querySelector('.scissors');
 
+let scoreboardPlayerText = document.querySelector('.scoreboard-player');
+let scoreboardComputerText = document.querySelector('.scoreboard-computer');
+let gameMsgText = document.querySelector('.gameMsg');
 
 btnRock.addEventListener('click', (e) => { 
     playerSelection = "rock";
@@ -66,15 +69,17 @@ function playRound(playerSelection, computerSelection) {
         ++playerScore;
     }
      console.log(result);
-     console.log("Player Score:", playerScore);
-     console.log("Computer Score:", computerScore);
+     scoreboardPlayerText.textContent = "Player Score:" + playerScore;
+     scoreboardComputerText.textContent = "Computer Score:" + computerScore;
 }
 
 function scoreBoard () {
     if (playerScore === 5 && playerScore > computerScore) {
-        alert("Congratulations. You Win! Click Reset Game to Play again");
+        gameMsgText.textContent = "Congratulations. You Win! Click Reset Game to Play again";
+        disableBtns();
     } else if (computerScore === 5 && computerScore > playerScore) {
-        alert("The Game is over. You lose. Click Reset Game to Play again");
+        gameMsgText.textContent = "The Game is over. You lose. Click Reset Game to Play again";
+        disableBtns();
     } 
 }
 
@@ -82,3 +87,10 @@ let reloadButton = document.querySelector("#myButton");
 reloadButton.addEventListener('click', function() {
     window.location.reload(true);
 });
+
+
+function disableBtns() {
+    btnRock.setAttribute('disabled', '');
+    btnPaper.setAttribute('disabled', '');
+    btnScissors.setAttribute('disabled', '');
+}
