@@ -2,10 +2,36 @@
 let result = "";
 let playerScore = 0;
 let computerScore = 0;
+let playerSelection = "";
 
+let btnRock = document.querySelector('.rock');
+let btnPaper = document.querySelector('.paper');
+let btnScissors = document.querySelector('.scissors');
+
+
+btnRock.addEventListener('click', (e) => { 
+    playerSelection = "rock";
+    let computerSelection = getComputerChoice();
+    playRound(playerSelection, computerSelection);
+    scoreBoard();
+});
+
+btnPaper.addEventListener('click', (e) => {
+    playerSelection = "paper";
+    let computerSelection = getComputerChoice();
+    playRound(playerSelection, computerSelection);
+    scoreBoard();
+});
+
+btnScissors.addEventListener('click', (e) => {
+    playerSelection = "scissors";
+    let computerSelection = getComputerChoice();
+    playRound(playerSelection, computerSelection);
+    scoreBoard();
+});
 
 function getComputerChoice() {
-    for (let i = 0; i < 5; i++) {
+
         let randomValue = Math.floor(Math.random() * 10);
         if (randomValue >= 0 && randomValue <= 3) {
             return ("rock");
@@ -14,13 +40,10 @@ function getComputerChoice() {
         } else {
             return ("scissors");
         } 
-    }
-}
-
-let computerSelection = getComputerChoice();
+};
 
 
-function playGame(playerSelection, computerSelection) {
+function playRound(playerSelection, computerSelection) {
     if (playerSelection === computerSelection) {
         result = "Tie";
     } else if (playerSelection === "rock" && computerSelection === "paper"){
@@ -43,6 +66,8 @@ function playGame(playerSelection, computerSelection) {
         ++playerScore;
     }
      console.log(result);
+     console.log("Player Score:", playerScore);
+     console.log("Computer Score:", computerScore);
 }
 
 function scoreBoard () {
@@ -52,18 +77,6 @@ function scoreBoard () {
         alert("The Game is over. You lose. Click Reset Game to Play again");
     } 
 }
-
-function game() {
-    for (let i = 0; playerScore<5 && computerScore<5; i++) {
-        playGame(prompt("Rock, Paper, or scissors?", "").toLowerCase(), getComputerChoice());
-        getComputerChoice(i);
-        scoreBoard(i);
-    } 
-}
-
-setTimeout(function() {
-    game();
-}, 500);
 
 let reloadButton = document.querySelector("#myButton");
 reloadButton.addEventListener('click', function() {
