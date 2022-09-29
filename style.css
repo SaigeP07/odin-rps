@@ -96,9 +96,9 @@ p {
     }
     .gameMsg {
         margin: auto;
-        font-size: 30px;
-        padding-left: 80px;
-        padding-right: 80px;
+        font-size: 10px;
+        margin-left: 2px;
+        margin-right: 2px;
     }
     .scoreboard-player, .scoreboard-computer {
         margin-left: 12%;
@@ -185,7 +185,9 @@ p {
     font-family: 'Courgette', cursive;
     text-shadow: 2px 2px 7px  #bc11e7;
     text-align: center;
-    margin-left: 22%;
-    margin-right: 22%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 20px;
+    padding-right: 20px;
 
 }
