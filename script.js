@@ -1,5 +1,4 @@
 
-let result = "";
 let playerScore = 0;
 let computerScore = 0;
 let playerSelection = "";
@@ -54,37 +53,36 @@ function getComputerChoice() {
 
 function playRound(playerSelection, computerSelection) {
     if (playerSelection === computerSelection) {
-        result = "Tie";
+        gameMsgText.textContent = "Tie";
     } else if (playerSelection === "rock" && computerSelection === "paper"){
-        result = "Paper beats rock. Point goes to the Computer";
+        gameMsgText.textContent = "Paper beats rock. \n Point goes to the Computer.";
         ++computerScore;
     } else if (playerSelection === "paper" && computerSelection === "scissors"){
-        result = "Scissors beat Paper. Point goes to the Computer";
+        gameMsgText.textContent = "Scissors beat Paper. Point goes to the Computer.";
         ++computerScore;
     } else if (playerSelection === "scissors" && computerSelection === "rock"){
-        result = "Rock beats Scissors. Point goes to the Computer";
+        gameMsgText.textContent = "Rock beats Scissors. Point goes to the Computer.";
         ++computerScore;
     } else if (playerSelection === "rock" && computerSelection === "scissors"){
-        result = "Rock beats Scissors! Point goes to You!";
+        gameMsgText.textContent = "Rock beats Scissors! Point goes to You!";
         ++playerScore;
     } else if (playerSelection === "paper" && computerSelection === "rock"){
-        result = "Paper beats rock! Point goes to You!";
+        gameMsgText.textContent = "Paper beats rock! Point goes to You!";
         ++playerScore;
     } else if (playerSelection === "scissors" && computerSelection === "paper"){
-        result = "Scissors beats Paper! Point goes to You!";
+        gameMsgText.textContent = "Scissors beats Paper! Point goes to You!";
         ++playerScore;
     }
-     console.log(result);
      scoreboardPlayerText.textContent = playerScore;
      scoreboardComputerText.textContent = computerScore;
 }
 
 function scoreBoard () {
     if (playerScore === 5 && playerScore > computerScore) {
-        gameMsgText.textContent = "Congratulations. You Win! Click 'Reset Game' to Play again";
+        gameMsgText.textContent = "Congratulations. You Win! Click 'Reset Game' to Play again!";
         disableBtns();
     } else if (computerScore === 5 && computerScore > playerScore) {
-        gameMsgText.textContent = "The Game is over. You lose. Click 'Reset Game' to Play again";
+        gameMsgText.textContent = "The Game is over. You lose. Click 'Reset Game' to Play again.";
         disableBtns();
     } 
 }
