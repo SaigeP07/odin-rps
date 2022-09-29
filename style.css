@@ -2,7 +2,15 @@ body {
     background-color: blue;
 }
 
+
+.game-btn-div {
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+}
 .game-btn {
     border-style: none;
     background-color: rgba(255, 255, 255, 0);
 }
+
