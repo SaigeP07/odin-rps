@@ -81,10 +81,10 @@ function playRound(playerSelection, computerSelection) {
 
 function scoreBoard () {
     if (playerScore === 5 && playerScore > computerScore) {
-        gameMsgText.textContent = "Congratulations. You Win! Click Reset Game to Play again";
+        gameMsgText.textContent = "Congratulations. You Win! Click 'Reset Game' to Play again";
         disableBtns();
     } else if (computerScore === 5 && computerScore > playerScore) {
-        gameMsgText.textContent = "The Game is over. You lose. Click Reset Game to Play again";
+        gameMsgText.textContent = "The Game is over. You lose. Click 'Reset Game' to Play again";
         disableBtns();
     } 
 }

@@ -83,3 +83,9 @@ h3 {
 .scoreboard-player, .scoreboard-computer {
     font-size: 100px;
 }
+
+.gameMsg {
+    display : flex;
+    justify-content: center;
+    font-size: 30px;
+}
