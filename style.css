@@ -1,15 +1,25 @@
 body {
     color: white;
     background-color: #080050;
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 h1 {
-    font-size: 600%;
+    font-size: 70px;
     font-weight: 500;
     margin-bottom: 1%;
     margin-top: 1%;
     font-family: 'Bungee Shade', cursive;
-    
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex: initial;
+    max-width: 500px;
+    min-width: 200px;
+    padding: 30px;
 
 }
 h3 {
@@ -29,10 +39,12 @@ p {
     flex-wrap: wrap;
     background-color: rgba(195, 49, 253, 0.8);
     border-radius: 60px;
-    margin-left: 25%;
-    margin-right: 25%;
+    margin-left: auto;
+    margin-right: auto;
     text-align: center;
     margin-top: 2%;
+    max-width: 1200px;
+    flex: initial;
 }
 
 .game-btn-div {
@@ -40,16 +52,66 @@ p {
     margin-left: auto;
     margin-right: auto;
     justify-content: center;
-    margin-top: 2%;
+    margin-top: 5%;
     margin-bottom: 50px;
+    flex: initial;
+    justify-content: center;
+
 }
 .game-btn {
     border-style: none;
     background-color: rgba(255, 255, 255, 0);
+    display: flex;
+    flex: initial;
+    flex-shrink: 1;
+    flex: 0 1 auto;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    margin-left: auto;
 }
 
 .game-btn > img {
-    scale: 90%;
+    scale: auto;
+    display: flex;
+    flex: initial;
+    flex-shrink: 1;
+    margin: auto;
+    flex: 0 1 auto;
+}
+
+@media  only screen and (max-width: 700px){
+    .game-btn > img {
+        width: 90%;
+    }
+    .game-btn-div {
+        margin-top: 16%;
+    }
+    h1 {
+        font-size: 50px;
+    }
+    h3 {
+        font-size: 40px;
+    }
+    .gameMsg {
+        margin: auto;
+        font-size: 30px;
+        padding-left: 80px;
+        padding-right: 80px;
+    }
+    .scoreboard-player, .scoreboard-computer {
+        margin-left: 12%;
+        background-color: blue;
+    }
+    .scoreboard {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    .header {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
 }
 
 .game-btn:hover {
@@ -93,9 +155,11 @@ p {
     display: flex;
     justify-content: space-around;
     margin-top: 3%;
-    padding-left: 500px;
-    padding-right: 500px;
+    margin-left: auto;
+    margin-right: auto;
     text-align: center;
+    max-width: 500px;
+    gap: 50px;
 }
 
 .scoreboard-text {

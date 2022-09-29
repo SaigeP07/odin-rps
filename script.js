@@ -12,6 +12,15 @@ let scoreboardPlayerText = document.querySelector('.scoreboard-player');
 let scoreboardComputerText = document.querySelector('.scoreboard-computer');
 let gameMsgText = document.querySelector('.gameMsg');
 
+let imgRock = document.createElement("img");
+imgRock.src = "images/rock.png";
+
+let imgPaper = document.createElement("img")
+imgPaper.src = "images/paper.png";
+
+let imgScissors = document.createElement("img")
+imgScissors.src = "images/scissors.png";
+
 
 
 btnRock.addEventListener('click', (e) => { 
@@ -55,7 +64,7 @@ function playRound(playerSelection, computerSelection) {
     if (playerSelection === computerSelection) {
         gameMsgText.textContent = "Tie";
     } else if (playerSelection === "rock" && computerSelection === "paper"){
-        gameMsgText.textContent = "Paper beats rock. \n Point goes to the Computer.";
+        gameMsgText.textContent = "Paper beats rock. Point goes to the Computer.";
         ++computerScore;
     } else if (playerSelection === "paper" && computerSelection === "scissors"){
         gameMsgText.textContent = "Scissors beat Paper. Point goes to the Computer.";
