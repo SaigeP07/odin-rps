@@ -75,8 +75,8 @@ function playRound(playerSelection, computerSelection) {
         ++playerScore;
     }
      console.log(result);
-     scoreboardPlayerText.textContent = "Player Score:" + playerScore;
-     scoreboardComputerText.textContent = "Computer Score:" + computerScore;
+     scoreboardPlayerText.textContent = playerScore;
+     scoreboardComputerText.textContent = computerScore;
 }
 
 function scoreBoard () {
