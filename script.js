@@ -7,10 +7,13 @@ let playerSelection = "";
 let btnRock = document.querySelector('.rock');
 let btnPaper = document.querySelector('.paper');
 let btnScissors = document.querySelector('.scissors');
+let reloadButton = document.querySelector("#myButton");
 
 let scoreboardPlayerText = document.querySelector('.scoreboard-player');
 let scoreboardComputerText = document.querySelector('.scoreboard-computer');
 let gameMsgText = document.querySelector('.gameMsg');
+
+
 
 btnRock.addEventListener('click', (e) => { 
     playerSelection = "rock";
@@ -33,16 +36,19 @@ btnScissors.addEventListener('click', (e) => {
     scoreBoard();
 });
 
-function getComputerChoice() {
+reloadButton.addEventListener('click', function() {
+    window.location.reload(true);
+});
 
-        let randomValue = Math.floor(Math.random() * 10);
-        if (randomValue >= 0 && randomValue <= 3) {
-            return ("rock");
-        } else if ( randomValue > 3 && randomValue <= 6 ) {
-            return ("paper");
-        } else {
-            return ("scissors");
-        } 
+function getComputerChoice() {
+    let randomValue = Math.floor(Math.random() * 10);
+    if (randomValue >= 0 && randomValue <= 3) {
+        return ("rock");
+    } else if ( randomValue > 3 && randomValue <= 6 ) {
+        return ("paper");
+    } else {
+        return ("scissors");
+    } 
 };
 
 
@@ -82,12 +88,6 @@ function scoreBoard () {
         disableBtns();
     } 
 }
-
-let reloadButton = document.querySelector("#myButton");
-reloadButton.addEventListener('click', function() {
-    window.location.reload(true);
-});
-
 
 function disableBtns() {
     btnRock.setAttribute('disabled', '');
