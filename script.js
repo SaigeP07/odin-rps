@@ -7,7 +7,7 @@ let playerSelection = "";
 let btnRock = document.querySelector('.rock');
 let btnPaper = document.querySelector('.paper');
 let btnScissors = document.querySelector('.scissors');
-let reloadButton = document.querySelector("#myButton");
+let reloadButton = document.querySelector(".myButton");
 
 let scoreboardPlayerText = document.querySelector('.scoreboard-player');
 let scoreboardComputerText = document.querySelector('.scoreboard-computer');
