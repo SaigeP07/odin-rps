@@ -33,6 +33,15 @@ h2 {
     padding-left: 30px;
 }
 
+h5 {
+    font-size: 15px;
+    font-family: 'IBM Plex Mono', monospace;
+    text-align: center;
+    margin-top: 8px;
+    margin-bottom: 5px;
+    letter-spacing: 2px;
+}
+
 
 p {
     font-family: 'Bungee Shade', cursive; 
@@ -58,8 +67,8 @@ p {
     margin-left: auto;
     margin-right: auto;
     justify-content: center;
-    margin-top: 5%;
-    margin-bottom: 50px;
+    margin-top: 20px;
+    margin-bottom: 0px;
     flex: initial;
     justify-content: center;
     max-width:1500px;
@@ -78,7 +87,7 @@ p {
     margin-right: auto;
     margin-top: auto;
     margin-left: auto;
-    transform: scale(.9);
+    transform: scale(.6);
 }
 
 .game-btn > img {
@@ -96,6 +105,8 @@ p {
     }
     .game-btn-div {
         margin-top: 5%;
+        margin-bottom: 50px;
+
     }
     h1 {
         font-size: 50px;
@@ -108,22 +119,36 @@ p {
         padding-left: 10%;
         font-style: italic;
     }
+    h5 {
+        font-size: 11px;
+        padding-top: 4px;
+        margin-bottom: 0px;
+    }
     .scoreboard {
         padding-left: 20px;
         padding-right: 20px;
     }
+    .game-btn {
+        transform: scale(.9);
+    }
+    .game-btn:hover {
+        transform: scale(1);
+    }
 }
 
 .game-btn:hover {
-    transform: scale(1);
+    transform: scale(.7);
     transition: .12s;
 }
 
+button {
+    max-width: 300px;
+}
 
 .reset-div {
     display: flex;
     justify-content: center;
-    margin-bottom: 5%;
+    margin-bottom: 3%;
 }
 
 .myButton {
