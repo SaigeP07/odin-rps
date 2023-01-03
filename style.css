@@ -25,7 +25,8 @@ h1 {
 }
 h3 {
     font-size: 50px;
-    font-family: 'Courgette', cursive;
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 200;
     margin-bottom: 2%;
 }
 
