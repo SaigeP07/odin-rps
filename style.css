@@ -9,10 +9,10 @@ body {
 
 h1 {
     font-size: 70px;
-    font-weight: 500;
+    font-weight: bold;
     margin-bottom: 1%;
     margin-top: 1%;
-    font-family: 'Bungee Shade', cursive;
+    font-family: 'Syncopate', sans-serif;
     margin-left: auto;
     margin-right: auto;
     display: flex;
