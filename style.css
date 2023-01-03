@@ -19,8 +19,9 @@ h1 {
     flex: initial;
     max-width: 500px;
     min-width: 200px;
-    padding: 30px;
+    padding-left: 30px;
     text-align: left;
+    text-decoration: underline red;
 
 }
 h2 {
@@ -28,11 +29,16 @@ h2 {
     font-family: 'IBM Plex Mono', monospace;
     font-weight: 200;
     margin-bottom: 2%;
+    margin-top: 2%;
+    padding-left: 30px;
+    letter-spacing: 5px;
 }
+
 
 p {
     font-family: 'Bungee Shade', cursive; 
     font-size: 300px;
+    margin: 0%;
 }
 .header {
     display: flex;
@@ -43,6 +49,7 @@ p {
     margin-right: auto;
     text-align: center;
     margin-top: 2%;
+    margin-bottom: 50px;
     max-width: 1200px;
     flex: initial;
 }
@@ -56,6 +63,8 @@ p {
     margin-bottom: 50px;
     flex: initial;
     justify-content: center;
+    max-width:1500px;
+    flex-shrink: 1;
 
 }
 .game-btn {
@@ -70,6 +79,7 @@ p {
     margin-right: auto;
     margin-top: auto;
     margin-left: auto;
+    transform: scale(.9);
 }
 
 .game-btn > img {
@@ -86,7 +96,7 @@ p {
         width: 90%;
     }
     .game-btn-div {
-        margin-top: 16%;
+        margin-top: 5%;
     }
     h1 {
         font-size: 50px;
@@ -94,18 +104,19 @@ p {
     h3 {
         font-size: 25px;
     }
+    h2 {
+        font-size: 20px;
+        padding-left: 10%;
+        font-style: italic;
+    }
     .scoreboard {
         padding-left: 20px;
         padding-right: 20px;
     }
-    .header {
-        margin-left: 10px;
-        margin-right: 10px;
-    }
 }
 
 .game-btn:hover {
-    transform: scale(1.15);
+    transform: scale(1);
     transition: .12s;
 }
 
@@ -117,23 +128,22 @@ p {
 }
 
 .myButton {
-	box-shadow: 2px 4px 5px -2px #bd38a2;
-	background:linear-gradient(to bottom, #00e1ff 5%, #41a2ba 100%);
-	background-color:#00e1ff;
-	border-radius:35px;
-	border:4px solid #ff00ff;
+	background-color:#000000;
+	border:1px solid #000000;
 	display:inline-block;
 	cursor:pointer;
 	color:#ffffff;
-	font-family: 'Roboto', sans-serif;
-	font-size:26px;
-	padding:16px 64px;
+	font-family:Arial;
+	font-size:17px;
+	padding:8px 16px;
 	text-decoration:none;
-	text-shadow:0px 1px 0px #ffffff;
+	text-shadow:0px 1px 0px #000000;
+    font-family: 'IBM Plex Mono', monospace;
+    font-style: italic;
 }
 .myButton:hover {
-	background:linear-gradient(to bottom, #41a2ba 5%, #00e1ff 100%);
-	background-color:#41a2ba;
+	background: red;
+	background-color:#ff0000;
 }
 .myButton:active {
 	position:relative;
@@ -144,25 +154,28 @@ p {
 .scoreboard {
     display: flex;
     justify-content: space-around;
-    margin-top: 3%;
     margin-left: auto;
     margin-right: auto;
     text-align: center;
     max-width: 500px;
-    gap: 50px;
+    max-height: 300px;
+    gap: 100px;
 }
 
 .scoreboard-text {
-    font-family: 'Courgette', cursive;
+    font-family: 'IBM Plex Mono', monospace;
     font-weight: 400;
-    font-size: 43px;
-    text-shadow: 2px 2px 7px  #bc11e7;
+    font-size: 20px;
+    font-style: italic;
+    letter-spacing: 3px;
 }
 
 .scoreboard-player, .scoreboard-computer {
     font-size: 130px;
-    background-color: rgba(255, 72, 215, 0.85);
     border-radius: 40px;
+    font-family:  'IBM Plex Mono', monospace;
+    font-weight: 200;
+    margin-top: 0%;
 }
 .scoreboard-computer {
     margin-left: 10%;
@@ -171,29 +184,39 @@ p {
 .gameMsg {
     display : flex;
     justify-content: center;
-    font-size: 60px;
-    font-family: 'Courgette', cursive;
-    text-shadow: 2px 2px 7px  #bc11e7;
+    font-size: 30px;
+    font-family: 'IBM Plex Mono', monospace;
     text-align: center;
     margin-left: auto;
     margin-right: auto;
     padding-left: 20px;
     padding-right: 20px;
+    height: 100px;
+    margin-top: 5%;
 
 }
 
 @media screen and (max-width: 768px){
     .gameMsg {
-        font-size: 33px;
+        font-size: 20px;
         margin-left: 2px;
         margin-right: 2px;
     }
     .scoreboard-player, .scoreboard-computer {
         background-color: rgba(0, 0, 0, 0);
-        margin-top: 20px;
     }
     .scoreboard {
-        gap: 20px;
+        gap: 100px;
         margin-top: 0%;
     }
+}
+
+.scoreboard-player-heading {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+h3.scoreboard-text {
+    margin: 0%;
 }
